@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+
+    <nav>
+        <h1 class="top">CLOSURE HANDSON</h1>
+    </nav><br>
+    <!-- --------------------------------------------------------- -->
+    <h3>Q1 -  function counter(){
+        var counter = 0;
+    
+        function IncreaseCounter() {
+            return counter += 1;
+        };
+    
+        return IncreaseCounter;
+    }
+    
+    var counter = counter();
+    alert(counter());
+    alert(counter());
+    alert(counter());
+    alert(counter());
+    </h3><br>
+    <h4>ANS. 1 <br>2 <br>3 <br>4</h4><br><hr><br>
+    <!-- --------------------------------------------------------- -->
+    <h3>Q2 - et count = 0;
+        (function () {
+          if (count === 0) {
+            let count = 1;
+            console.log(count); // What is logged?
+          }
+          console.log(count); // What is logged?
+        })();</h3><br>
+        <h4>ANS: 1 <br>0</h4><br><hr><br>
+        <!-- ---------------------------------------------------- -->
+
+    <h3>Q3 - for (var i = 0; i < 3; i++) {
+        setTimeout(function log() {
+          console.log(i); // What is logged?
+        }, 1000);
+      }</h3>   <br>
+      <h3>ANS :3 <br>3 <br>3
+
+      </h3> <br><hr><br>
+      <!-- ------------------------------------------------------- -->
+    
+      <h3>Q4 -Write a code to calculate area of a rectangle using inner function. In this case outer function should accept parameter length and inner function should accept parameter breadth.?
+    </h3><br>
+    <pre>
+    <b>ANS:</b>function abc(length){
+          function bca(breadth){
+            console.log(length*breadth)
+            }
+            bca(5)
+         }
+         abc(4)
+ 
+    OUTPUT: 20
+    </pre><br><hr><br>
+
+    <h3>Q5 -Take a variable in outer function and create an inner function to increase the counter every time it is called? </h3><br>
+    <pre>
+    <b>ANS:</b>function outerFunction() {
+        let counter = 0; // Variable in the outer function
+      
+        function innerFunction() {
+          counter++;
+          console.log("Counter: " + counter);
+        }
+      
+        return innerFunction; // Returning the inner function
+      }
+      
+      // Create an instance of the inner function
+      const counterFunc = outerFunction();
+      
+      // Call the inner function multiple times
+      counterFunc(); // Output: Counter: 1
+      counterFunc(); // Output: Counter: 2
+      counterFunc(); //output : counter 3
+    </pre><br><hr><br>
+
+
+    <h3>Q6 -Print Output
+
+        var a = 12;
+        (function () {
+          alert(a);
+        })();
+        </h3><br>
+    <pre>
+    <b>ANS:</b> 12
+    </pre><br><hr><br>
+
+
+    <h3>Q7 -var a = 10;
+        var x = (function () {
+          var a = 12;
+          return function () {
+            alert(a);
+          };
+        })();
+        x();</h3><br>
+    <pre>
+    <b>ANS:</b>12 
+    </pre><br><hr><br>
+
+    <h3>Q8 - var globalVar = "xyz";
+
+        (function outerFunc(outerArg) {
+            var outerVar = 'a';
+            
+            (function innerFunc(innerArg) {
+            var innerVar = 'b';
+            
+            console.log(
+                "outerArg = " + outerArg + "\n" +
+                "innerArg = " + innerArg + "\n" +
+                "outerVar = " + outerVar + "\n" +
+                "innerVar = " + innerVar + "\n" +
+                "globalVar = " + globalVar);
+            
+            })(456);
+        })(123); 
+       </h3><br>
+
+    <pre>
+    <b>ANS:</b>outerArg = 123
+    innerArg = 456
+    outerVar = a
+    innerVar = b
+    globalVar = xyz
+    </pre>
+</body>
+</html>
